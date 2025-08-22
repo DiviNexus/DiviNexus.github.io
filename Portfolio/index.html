@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Name | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+    	html {
+        	scroll-behavior: smooth;
+    	}
+    </style>
+</head>
+<body>
+    <nav>
+    	<button class="nav-btn" data-target="home">Home</button>
+    	<button class="nav-btn" data-target="about">About Me</button>
+    	<button class="nav-btn" data-target="education">Education</button>
+    	<button class="nav-btn" data-target="skills">Skills</button>
+    	<button class="nav-btn" data-target="projects">Projects</button>
+    	<button class="nav-btn" data-target="extracurriculars">Extracurriculars</button>
+    </nav>
+
+    <section id="home" class="content-section">
+        <div class="welcome-section">
+        <h1>Hello there!<br>I am Divija Pilla</h1>
+    </div>
+    </section>
+
+    <section id="about" class="content-section">
+	<div class="about-container">
+        	<div class="about-text">
+        		<h2>About Me</h2>
+        		<p>I am a third-year BTech student and an aspiring Full-Stack Java Developer and a UI/UX enthusiast.</p>
+			<p>I'm looking for internship opportunities to build my technical skills and gain real-world experience. </p>
+
+			<p>I'm passionate about building efficient applications and designing intuitive user experiences. </p>
+
+			<p>Always eager to learn, innovate and collaborate, I'm refining my skills in backend logic, database optimization and front-end design! </p>
+		</div>
+		<div class="about-photo">
+			<img src="profile.jpg" alt="Divija Pilla" />
+		</div>
+	</div>
+    </section>
+
+    <section id="education" class="content-section">
+        <h2>Education</h2>
+        <ul>
+            <li>BTech in Information Technology, Vignan's Institute of Engineering for Women, 2023–Present</li>
+	    <li>Intermediate - Ascent Junior College</li>
+            <li>Secondary Education - Sri Prakash Vidyaniketan</li>
+        </ul>
+    </section>
+
+    <section id="skills" class="content-section">
+        <h2>Skills</h2>
+        <ul>
+            <li>Programming Languages: C, C++, Java, Python</li>
+            <li>Web Technologies: HTML, CSS</li>
+            <li>Database Skills: Oracle, MySQL</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="content-section">
+        <h2>Projects</h2>
+        <ul>
+            <li>Portfolio Website – A personal site made with HTML and CSS to showcase my education and skills.</li>
+        </ul>
+    </section>
+
+    <section id="extracurriculars" class="content-section">
+        <h2>Extracurricular Activities</h2>
+        <ul>
+            <li>Co-Treasurer, IT Dept. Event Committee (2025)</li>
+	    <li>Hobbies - Reading Books, Writing and Badminton</li>
+        </ul>
+    </section>
+
+    <script>
+    	const buttons = document.querySelectorAll('nav .nav-btn');
+    	const sections = document.querySelectorAll('.content-section');
+
+    	function showSection(id) {
+        	// Hide all sections
+        	sections.forEach(section => section.classList.remove('active'));
+        	// Remove active class from all buttons
+        	buttons.forEach(btn => btn.classList.remove('active'));
+
+        	// Show selected section
+        	document.getElementById(id).classList.add('active');
+        	// Add active class to clicked button
+        	document.querySelector(`nav .nav-btn[data-target="${id}"]`).classList.add('active');
+
+        	// Smooth scroll to section
+        	document.getElementById(id).scrollIntoView({behavior: 'smooth'});
+    	}
+
+    	// Set up event listeners on buttons
+    	buttons.forEach(button => {
+        	button.addEventListener('click', () => {
+            	showSection(button.getAttribute('data-target'));
+        	});
+    	});
+
+    	// Show home section by default on page load
+    	window.onload = () => {
+        	showSection('home');
+    	};
+	</script>
+</body>
+</html>
