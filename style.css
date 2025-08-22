@@ -1,0 +1,176 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and general font styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #0077b6;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav .nav-links li {
+    margin: 0 15px;
+}
+
+nav .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav .nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Sections styling */
+.section {
+    max-width: 700px;
+    background: white;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #023e8a;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #03045e;
+}
+
+/* Lists */
+ul {
+    list-style: disc inside;
+    margin-left: 20px;
+}
+
+/* Responsive Design: For smaller screens */
+@media (max-width: 600px) {
+    nav .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav .nav-links li {
+        margin: 10px 0;
+    }
+    .section {
+        margin: 15px 10px;
+        padding: 15px;
+    }
+}
+.profile-pic {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px auto;
+    border: 3px solid #7bd1ff;
+}
+#home .welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Adjust height so email details fit below */
+    background-color: #7bd1ff;
+    color: #ffffff !important;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+/* Hide all sections by default except home */
+
+.content-section {
+    display: none;
+    max-width: 700px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Show the active section */
+.content-section.active {
+    display: block;
+}
+
+/* About Me container flex for left text, right photo */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* increased gap for more space between text and photo */
+    max-width: 900px; /* wider container */
+    margin: 30px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.3rem;    /* increase font size */
+    line-height: 1.6;
+}
+
+.about-photo img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+/* Nav buttons style */
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav .nav-btn {
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin: 0 8px;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+nav .nav-btn:hover {
+    background-color: #005f86;
+}
+
+nav .nav-btn.active {
+    background-color: #023e8a;
+}
+
